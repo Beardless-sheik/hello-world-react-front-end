@@ -1,25 +1,22 @@
 import React, { useEffect } from 'react';
-import { fetchGreeting } from './redux/greetingSlice';
 import { useSelector, useDispatch } from 'react-redux';
+import { fetchGreeting } from './redux/greetingSlice';
 
-function Greeting(){
-  const isEmptyObject = (obj) => {
-    return Object.keys(obj).length === 0 && obj.constructor === Object;
-  }
+function Greeting() {
+  const isEmptyObject = (obj) => Object.keys(obj).length === 0 && obj.constructor === Object;
   const greetings = useSelector((state) => state.greeting.greeting);
   const dispatch = useDispatch();
   useEffect(() => {
-    if(isEmptyObject(greetings)){
-      dispatch(fetchGreeting())
-    };
+    if (isEmptyObject(greetings)) {
+      dispatch(fetchGreeting());
+    }
   }, [dispatch, greetings]);
-  console.log(greetings)
-  return(
+  return (
     <div>
-      Here is a nice Random Greeting: 
+      Here is a nice Random Greeting:
       {greetings.greeting}
     </div>
-  )
+  );
 }
 
 export default Greeting;
