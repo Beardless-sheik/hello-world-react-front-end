@@ -2,6 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+The backend [rails repo](https://github.com/Beardless-sheik/hello-world-rails-api/pull/1) that the data is fetched from. 
+
 ## Available Scripts
 
 In the project directory, you can run:
